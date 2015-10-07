@@ -12,6 +12,8 @@ Nintendont-Updater (Linux)
 - Aktualisiert auf die neueste Version von [GitHub](https://github.com/FIX94/Nintendont)
 - Open-Source!
 
+![Nintendont-Updater in einer GIF](https://static.wiidatabase.de/Nintendont-Updater-Linux.gif)
+
 ## Das kommt noch!
 - [ ] OS-X-Version
 - Mehr?
