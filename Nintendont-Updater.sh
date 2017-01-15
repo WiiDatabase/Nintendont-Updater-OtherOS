@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-CURRENTVERSION="v1.2 Linux (beta)"
+CURRENTVERSION="v1.2.1 Linux (beta)"
 URL="https://raw.githubusercontent.com/FIX94/Nintendont/master"
 HEADER="	Nintendont-Updater $CURRENTVERSION von WiiDatabase.de"
 
@@ -46,12 +46,11 @@ download () {
 
   echo -e "\n       Downloade Nintendont"
   echo
-  wget -t 3 -nv -P "/tmp/nintendont/" "$URL/controllerconfigs/controllers.zip" "$URL/loader/loader.dol" "$URL/nintendont/titles.txt" "$URL/nintendont/meta.xml" "$URL/nintendont/icon.png" "https://raw.githubusercontent.com/dolphin-emu/dolphin/master/Data/Sys/GC/font_ansi.bin" "https://raw.githubusercontent.com/dolphin-emu/dolphin/master/Data/Sys/GC/font_sjis.bin"
+  wget -t 3 -nv -P "/tmp/nintendont/" "$URL/controllerconfigs/controllers.zip" "$URL/loader/loader.dol" "$URL/nintendont/titles.txt" "$URL/nintendont/meta.xml" "$URL/nintendont/icon.png"
   7za x -y -o"$PFAD/controllers" /tmp/nintendont/controllers.zip
   mv /tmp/nintendont/loader.dol "$PFAD/apps/nintendont/boot.dol"
   mv /tmp/nintendont/icon.png "$PFAD/apps/nintendont/"
   mv /tmp/nintendont/titles.txt "$PFAD/apps/nintendont/"
-  mv /tmp/nintendont/font_*.bin "$PFAD"
 
   echo -e "\n       Update Version in meta.xml..."
   sed "s/<version>.*<\/version>/<version>$AVAILABLEVER<\/version>/"  /tmp/nintendont/meta.xml >/tmp/nintendont/meta-updated.xml
